@@ -18,6 +18,15 @@ function makeGrid(num_blocks) {
   }
 }
 
+function reset() {
+  $(".block").css("opacity", 0);
+}
+
+function removeBlocks() {
+  var num_blocks = prompt("How many blocks per side?");
+  $('div').remove('.block_row');
+  makeGrid(num_blocks);
+}
 
 
 $(document).ready(function() {
@@ -40,7 +49,7 @@ $(document).ready(function() {
 
   // reset board
   $("#clear").click(function() {
-    $(".block").css("opacity", 0);
+    removeBlocks();
   });
 
 
