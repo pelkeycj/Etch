@@ -1,13 +1,12 @@
 
-function makeGrid() {
-  var num_blocks = 64;
-  var size = ((800 - 2*num_blocks) / num_blocks);
+function makeGrid(num_blocks) {
+  var size = 800 / num_blocks;
   //make rows
   for (i = 0; i < num_blocks; i++)
   {
     $("<div class='block_row'></div>")
           .attr("id", "row"+i)
-          .css({"height": 800 / num_blocks})
+          .css({"height": size})
           .appendTo("#container");
     //make cols
     for (j = 0; j < num_blocks; j++)
@@ -19,9 +18,11 @@ function makeGrid() {
   }
 }
 
+
+
 $(document).ready(function() {
   // initialize board
-  makeGrid();
+  makeGrid(100);
 
   // animate "Clear" button
   $("#clear").hover(function(){
@@ -30,6 +31,17 @@ $(document).ready(function() {
     $(this).css("background-color", "#c9c9c9");
   });
 
+  // darken block
+  $("div.block").hover(function(){
+    $(this).css("opacity", function() {
+            return parseFloat($(this).css("opacity")) + .1;
+    });
+  });
+
+  // reset board
+  $("#clear").click(function() {
+    $(".block").css("opacity", 0);
+  });
 
 
 });

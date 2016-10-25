@@ -16,9 +16,12 @@ h1 {
   margin: 40 auto;
 }
 
+
 #clear {
   height: 40px;
   width: 80px;
+  display: block;
+  margin: 0 auto;
   border-radius: 10px;
   cursor: pointer;
   background-color: #c9c9c9;
@@ -27,6 +30,7 @@ h1 {
 #clear p {
   text-align: center;
   line-height: 40px;
+  margin: auto;
 }
 
 #container {
@@ -43,13 +47,14 @@ h1 {
   width: 100%;
   margin: 0;
   padding: 0;
+  border-width: 0;
 }
 
 .block {
   display: inline-block;
   text-align: justify;
-  border-color: black;
-  border: solid;
+  opacity: 0;
+  background-color: #000;
   border-width: 1px;
   margin: 0 auto;
   padding: 0;
