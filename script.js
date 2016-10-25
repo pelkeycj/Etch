@@ -19,10 +19,6 @@ function makeGrid(num_blocks) {
 }
 
 function reset() {
-  $(".block").css("opacity", 0);
-}
-
-function removeBlocks() {
   var num_blocks = prompt("How many blocks per side?");
   $('div').remove('.block_row');
   makeGrid(num_blocks);
@@ -41,7 +37,7 @@ $(document).ready(function() {
   });
 
   // darken block
-  $("div.block").hover(function(){
+  $(document).on('mouseover', 'div.block', function(){
     $(this).css("opacity", function() {
             return parseFloat($(this).css("opacity")) + .1;
     });
@@ -49,7 +45,7 @@ $(document).ready(function() {
 
   // reset board
   $("#clear").click(function() {
-    removeBlocks();
+    reset();
   });
 
 
