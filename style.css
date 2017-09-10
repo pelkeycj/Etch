@@ -17,7 +17,7 @@ h1 {
 }
 
 
-#clear {
+#buttons {
   height: 40px;
   width: 80px;
   display: block;
@@ -27,7 +27,7 @@ h1 {
   background-color: #c9c9c9;
 }
 
-#clear p {
+#buttons p {
   text-align: center;
   line-height: 40px;
   margin: auto;
