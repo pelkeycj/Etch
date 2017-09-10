@@ -54,7 +54,7 @@ h1 {
   display: inline-block;
   text-align: justify;
   opacity: 0;
-  background-color: #000;
+  background-color: lightgray;
   border-width: 1px;
   margin: 0 auto;
   padding: 0;

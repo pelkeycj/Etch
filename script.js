@@ -6,7 +6,7 @@ function makeGrid(num_blocks) {
   {
     $("<div class='block_row'></div>")
           .attr("id", "row"+i)
-          .css({"height": size})
+          .css({"height": size, "background-color": "light"})
           .appendTo("#container");
     //make cols
     for (j = 0; j < num_blocks; j++)
@@ -20,6 +20,10 @@ function makeGrid(num_blocks) {
 
 function reset() {
   var num_blocks = prompt("How many blocks per side?");
+  if (num_blocks > 100) {
+    alert("Enter a number under 100.");
+    reset();
+  }
   $('div').remove('.block_row');
   makeGrid(num_blocks);
 }
@@ -27,7 +31,7 @@ function reset() {
 
 $(document).ready(function() {
   // initialize board
-  makeGrid(100);
+  makeGrid(60);
 
   // animate "Clear" button
   $("#clear").hover(function(){
@@ -39,7 +43,8 @@ $(document).ready(function() {
   // darken block
   $(document).on('mouseover', 'div.block', function(){
     $(this).css("opacity", function() {
-            return parseFloat($(this).css("opacity")) + .1;
+            return parseFloat($(this).css("opacity")) + .5;
+    $(this).css("background-color", "black");
     });
   });
 
