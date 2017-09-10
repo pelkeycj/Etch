@@ -1,4 +1,4 @@
-## Etch
+## [Etch](http://etch.pelkey.tech)
 ### An in-browser Etch-a-Sketch
 
 - Move your cursor over the canvas to color in "pixels"
